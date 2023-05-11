@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 import { OrderService } from '../order.service';
+import { UserService } from '../user.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-product-list',
@@ -10,11 +12,13 @@ import { OrderService } from '../order.service';
 })
 export class ProductListComponent implements OnInit {
   productList: Product[] = [];
+  currentUser: User = {user_id: -1, user: '', password: ''};
 
-  constructor(private productService: ProductService, private orderService: OrderService) {}
+  constructor(private productService: ProductService, private orderService: OrderService, private userService: UserService) {}
 
   ngOnInit() {
     this.fetchData();
+    this.currentUser = this.userService.getCurrentUser();
   }
 
   fetchData() {

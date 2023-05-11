@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full' },
   { path: 'landing', component: ProductListComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'orders', component: OrderHistoryComponent }
 ];
 
 @NgModule({

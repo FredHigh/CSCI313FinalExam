@@ -27,13 +27,15 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if(this.userList.find((user) => { return user.user === this.newUser.user && user.password === this.newUser.password})) {
-      this.currentUser = this.newUser;
+    if(this.userList.find((user) => { return user.user === this.currentUser.user && user.password === this.currentUser.password})) {
+      this.userService.setUser(this.currentUser);
     }
   }
 
   submit() {
     this.newUser.user_id = this.userService.getNextId();
-    this.userService.addUser(this.newUser);
+    this.userService.addUser(this.newUser).subscribe(data => {
+      console.log(data);
+    });
   }
 }

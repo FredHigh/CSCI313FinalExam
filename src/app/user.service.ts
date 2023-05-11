@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class UserService {
   nextId: number = 0;
+  currentUser: User = {user_id: -1, user: '', password: ''};
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +26,14 @@ export class UserService {
       return userArray;
       })
     );
+  }
+
+  getCurrentUser() {
+    return this.currentUser;
+  }
+
+  setUser(newUser: User) {
+    this.currentUser = newUser;
   }
 
   addUser(newUser: User) {

@@ -1,1 +1,15 @@
-<p>cart works!</p>
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>Your cart</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngFor="let product of cartList">
+            <p>{{product.title}}: {{product.price}}</p>
+            <button (click)="remove(product.product_id)">Remove Item</button>
+        </div>
+        <p>Price Total: </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button routerLink="/landing" (click)="submit()">Checkout</button>
+    </mat-card-actions>
+</mat-card>
