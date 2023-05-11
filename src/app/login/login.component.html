@@ -1,0 +1,33 @@
+<mat-grid-list cols="2" rowHeight="500px">
+    <mat-grid-tile>
+        <mat-card class="card">
+            <mat-card-header>
+                <mat-card-title>Login</mat-card-title>
+                <mat-card-subtitle>Please login using your username and password</mat-card-subtitle>
+                <mat-card-subtitle>Don't have an account? Sign up!</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                Username: <input [(ngModel)]="currentUser.user"/><br>
+                password: <input [(ngModel)]="currentUser.password"/>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button routerLink="/landing" (click)="login()">Login</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="card">
+            <mat-card-header>
+                <mat-card-title>Sign Up</mat-card-title>
+                <mat-card-subtitle>Please enter a valid username and password</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                Username: <input [(ngModel)]="newUser.user"/><br>
+                password: <input [(ngModel)]="newUser.password"/>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button routerLink="/landing" (click)="submit()">Sign Up</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

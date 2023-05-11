@@ -1,0 +1,8 @@
+.card {
+    max-width: 450px;
+    margin: 5px;
+}
+
+mat-grid-tile {
+    background: blueviolet;
+}

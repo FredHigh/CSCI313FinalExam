@@ -1,0 +1,10 @@
+<mat-grid-tile *ngFor="let order of orderList">
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>{{order.order_id}} @ {{order.date}}</mat-card-title>
+        <mat-card-subtitle>${{order.price}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p *ngFor="let product of order.products">product.title</p>
+    </mat-card-content>
+</mat-card>
