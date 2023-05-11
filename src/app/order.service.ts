@@ -13,6 +13,10 @@ export class OrderService {
     this.cartArray.push(product);
   }
 
+  getCart() {
+    return this.cartArray;
+  }
+
   removeFromCart(id: number) {
     let index = this.cartArray.findIndex(c => c.product_id === id);
     this.cartArray.splice(index, 1);
