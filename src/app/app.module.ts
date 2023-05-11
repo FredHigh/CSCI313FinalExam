@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     NoopAnimationsModule,
