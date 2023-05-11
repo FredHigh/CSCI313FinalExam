@@ -1,8 +1,9 @@
 <h1>E-commerce App</h1>
-<nav mat-tab-nav-bar>
-    <a mat-tab-link routerLink="">Home</a>
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a mat-tab-link routerLink="/landing">Home</a>
     <a mat-tab-link routerLink="">Cart</a>
     <a mat-tab-link routerLink="">View Order History</a>
     <a mat-tab-link routerLink="">Login</a>
 </nav>
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
 <router-outlet></router-outlet>
