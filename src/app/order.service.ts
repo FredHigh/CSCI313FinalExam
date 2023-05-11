@@ -23,13 +23,27 @@ export class OrderService {
   }
 
   priceTotal() {
+    this.totalPrice = 0;
     this.cartArray.forEach((product) => {
-
+      this.totalPrice += product.price;
     });
+    return this.totalPrice;
   }
 
   getCart() {
     return this.cartArray;
+  }
+
+  getOrders() {
+    return this.http.get<Order[]>('https://shoppinginfo-4c4b6-default-rtdb.firebaseio.com/' + 'order.json')
+    .pipe(map(responseData => {
+      const orderArray: Order[] = [];
+      for(const key in responseData) {
+        orderArray.push(responseData[key]);
+      }
+      return orderArray;
+      })
+    );
   }
 
   removeFromCart(id: number) {

@@ -19,6 +19,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.fetchData();
     this.currentUser = this.userService.getCurrentUser();
+    this.price = this.orderService.priceTotal();
   }
 
   fetchData() {
@@ -27,6 +28,7 @@ export class CartComponent implements OnInit {
 
   remove(id: number) {
     this.orderService.removeFromCart(id);
+    this.price = this.orderService.priceTotal();
   }
 
   submit() {
